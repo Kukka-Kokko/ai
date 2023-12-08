@@ -6,6 +6,7 @@ Misskey用の日本語Botです。
 
 ## 本家と何が違うの
 ホワイトデーのセリフと季節ごとのセリフを追加しました。
+アンケート機能と迷路機能の無効化オプション
 
 ## インストール
 > Node.js と npm と MeCab (オプション) がインストールされている必要があります。
@@ -22,6 +23,8 @@ Misskey用の日本語Botです。
 	"chartEnabled": "チャート機能を無効化する場合は false を入れてください",
 	"reversiEnabled": "藍とリバーシで対局できる機能を有効にする場合は true を入れる (無効にする場合は false)",
 	"serverMonitoring": "サーバー監視の機能を有効にする場合は true を入れる (無効にする場合は false)",
+	"pollEnabled": "アンケート機能を有効にする場合は true を入れる (無効にする場合は false)",
+	"mazeEnabled": "迷路機能を有効にする場合は true を入れる (無効にする場合は false)",
 	"mecab": "MeCab のインストールパス (ソースからインストールした場合、大体は /usr/local/bin/mecab)",
 	"mecabDic": "MeCab の辞書ファイルパス (オプション)",
 	"memoryDir": "memory.jsonの保存先（オプション、デフォルトは'.'（レポジトリのルートです））"
@@ -43,6 +46,8 @@ Misskey用の日本語Botです。
 	"chartEnabled": "チャート機能を無効化する場合は false を入れてください",
 	"reversiEnabled": "藍とリバーシで対局できる機能を有効にする場合は true を入れる (無効にする場合は false)",
 	"serverMonitoring": "サーバー監視の機能を有効にする場合は true を入れる (無効にする場合は false)",
+	"pollEnabled": "アンケート機能を有効にする場合は true を入れる (無効にする場合は false)",
+	"mazeEnabled": "迷路機能を有効にする場合は true を入れる (無効にする場合は false)",
 	"mecab": "/usr/bin/mecab",
 	"mecabDic": "/usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd/",
 	"memoryDir": "data"
