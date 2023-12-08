@@ -7,6 +7,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@types/babel__traverse": "7.18.3",
 		"@types/chalk": "2.2.0",
 		"@types/lokijs": "1.5.4",
 		"@types/node": "16.0.1",
@@ -19,7 +20,7 @@
 		"@types/ws": "7.4.6",
 		"autobind-decorator": "2.4.0",
 		"axios": "1.6.0",
-		"canvas": "2.10.2",
+		"canvas": "2.11.2",
 		"chalk": "4.1.1",
 		"lokijs": "1.5.12",
 		"memory-streams": "0.1.3",
