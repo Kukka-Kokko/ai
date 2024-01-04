@@ -175,6 +175,21 @@ export default class extends Module {
 	}
 
 	@autobind
+	private hizamakura(msg: Message): boolean {
+		if (!msg.includes(['ひざまくら', '膝枕'])) return false;
+
+		msg.reply(getSerif(
+			msg.friend.love >= 10 ? serifs.core.hizamakura.love2 :
+			msg.friend.love >= 4 ? serifs.core.hizamakura.love1 :
+			msg.friend.love <= 0 ? serifs.core.hizamakura.hate1 :
+			msg.friend.love <= -5 ? serifs.core.hizamakura.hate2 :
+			serifs.core.hizamakura.normal
+		));
+
+		return true;
+	}
+
+	@autobind
 	private kawaii(msg: Message): boolean {
 		if (!msg.includes(['かわいい', '可愛い'])) return false;
 

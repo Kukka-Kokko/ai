@@ -66,15 +66,20 @@ export default class extends Module {
     if (!msg.text.includes('って呼んで')) return false;
     if (msg.text.startsWith('って呼んで')) return false;
 
-    let name = msg.text.match(/^(.+?)って呼んで/)![1];
+    const nameMatch = msg.text.match(/^(.+?)って呼んで/)![1];
 
     // メンション部分を除外
-		name = name.replace(/<@[^>]+>/g, '');
+	const name = nameMatch.replace(/@[a-zA-Z0-9_]+/g, '');
 
     if (name.length > 50) {
         msg.reply(serifs.core.tooLong);
         return true;
     }
+
+	if (!safeForInterpolate(name)) {
+		msg.reply(serifs.core.invalidName);
+		return true;
+	}
 
     const withSan = titles.some(t => name.endsWith(t));
 

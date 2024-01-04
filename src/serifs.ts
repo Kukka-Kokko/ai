@@ -151,6 +151,19 @@ export default {
 		transferFailed: 'うーん、合言葉が間違ってませんか...？',
 
 		transferDone: name => name ? `はっ...！ おかえりなさい、${name}！` : `はっ...！ おかえりなさい！`,
+
+		hizamakura: {
+			normal: 'どうですか？',
+
+			love2: 'そのままゆっくりおやすみなさい……',
+
+			love1: 'ねんねんころりよ～',
+
+			hate1: '……',
+
+			hate2: '近づかないでください！'
+
+		}
 	},
 
 	keyword: {
@@ -497,10 +510,6 @@ export default {
 			'ホットココア、おいしいです♪',
 			'こたつで丸くなりたいです…',
 		],
-	},
-/**ホワイトデー */
-	whiteday: {
-		okaeshiFromYou: name => name ? `${name}、バレンタインのお返し、待ってます♪` : 'バレンタインのお返し、待ってます♪',
 	},
 
 	/**Happy New Year! */
