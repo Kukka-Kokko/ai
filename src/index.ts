@@ -14,7 +14,6 @@ const pkg = require('../package.json');
 import CoreModule from './modules/core';
 import TalkModule from './modules/talk';
 import BirthdayModule from './modules/birthday';
-import ReversiModule from './modules/reversi';
 import PingModule from './modules/ping';
 import EmojiModule from './modules/emoji';
 import EmojiReactModule from './modules/emoji-react';
@@ -34,7 +33,6 @@ import SleepReportModule from './modules/sleep-report';
 import NotingModule from './modules/noting';
 import PollModule from './modules/poll';
 import ReminderModule from './modules/reminder';
-import WhitedayModule from './modules/whiteday';
 
 console.log('   __    ____  _____  ___ ');
 console.log('  /__\\  (_  _)(  _  )/ __)');
@@ -72,7 +70,6 @@ promiseRetry(retry => {
 		new FortuneModule(),
 		new GuessingGameModule(),
 		new KazutoriModule(),
-		new ReversiModule(),
 		new TimerModule(),
 		new DiceModule(),
 		new TalkModule(),
@@ -89,7 +86,6 @@ promiseRetry(retry => {
 		new NotingModule(),
 		new PollModule(),
 		new ReminderModule(),
-		new WhitedayModule(),
 	]);
 }).catch(e => {
 	log(chalk.red('Failed to fetch the account'));
