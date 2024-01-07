@@ -25,6 +25,34 @@ export default class extends Module {
         const season = this.getSeason();
 		    const notes = [
 					...serifs.noting.notes,
+										() => {
+						const item = genItem();
+						return serifs.noting.talk(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.choice(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.need(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.brake(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.summon(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.offering(item);
+					},
+					() => {
+						const item = genItem();
+						return serifs.noting.give(item);
+					},
 					() => {
 						const item = genItem();
 						return serifs.noting.want(item);
