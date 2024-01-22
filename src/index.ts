@@ -45,7 +45,6 @@ function log(msg: string): void {
 
 log(chalk.bold(`Ai v${pkg._v}`));
 
-
 promiseRetry(retry => {
 	log(`Account fetching... ${chalk.gray(config.host)}`);
 
@@ -58,8 +57,7 @@ promiseRetry(retry => {
 }, {
 	retries: 3
 }).then(account  => {
-	const ai = new 藍(account, []);
-	const acct = `@${ai.account.username}`;
+	const acct = `@${account.username}`;
 	log(chalk.green(`Account fetched successfully: ${chalk.underline(acct)}`));
 
 	log('Starting AiOS...');
