@@ -57,7 +57,7 @@ promiseRetry(retry => {
 	}).json().catch(retry);
 }, {
 	retries: 3
-}).then(account => {
+}).then((account: User)  => {
 	const acct = `@${account.username}`;
 	log(chalk.green(`Account fetched successfully: ${chalk.underline(acct)}`));
 
