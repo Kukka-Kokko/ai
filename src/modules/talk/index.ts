@@ -24,6 +24,7 @@ export default class extends Module {
 			this.erait(msg) ||
 			this.omedeto(msg) ||
 			this.nadenade(msg) ||
+			this.hizamakura(msg) ||
 			this.kawaii(msg) ||
 			this.suki(msg) ||
 			this.hug(msg) ||
@@ -174,10 +175,9 @@ export default class extends Module {
 		return true;
 	}
 
-<<<<<<< HEAD
-	@autobind
+	@bindThis
 	private hizamakura(msg: Message): boolean {
-		if (!msg.includes(['ひざまくら', '膝枕'])) return false;
+		if (!msg.includes(['ひざまくらして', '膝枕して'])) return false;
 
 		msg.reply(getSerif(
 			msg.friend.love >= 10 ? serifs.core.hizamakura.love2 :
@@ -190,10 +190,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
-=======
 	@bindThis
->>>>>>> 54f10b33216ad516507c4d6eac45f435866a06ad
 	private kawaii(msg: Message): boolean {
 		if (!msg.includes(['かわいい', '可愛い'])) return false;
 

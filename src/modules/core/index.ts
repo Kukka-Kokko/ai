@@ -66,11 +66,7 @@ export default class extends Module {
     if (!msg.text.includes('って呼んで')) return false;
     if (msg.text.startsWith('って呼んで')) return false;
 
-<<<<<<< HEAD
-    const nameMatch = msg.text.match(/^(.+?)って呼んで/)![1];
-=======
 		const name = msg.text.match(/^(.+?)って呼んで/g)![1];
->>>>>>> 54f10b33216ad516507c4d6eac45f435866a06ad
 
     // メンション部分を除外
 	const name = nameMatch.replace(/@[a-zA-Z0-9_]+/g, '');
@@ -85,27 +81,7 @@ export default class extends Module {
 		return true;
 	}
 
-<<<<<<< HEAD
-    const withSan = titles.some(t => name.endsWith(t));
-
-    if (withSan) {
-        msg.friend.updateName(name);
-        msg.reply(serifs.core.setNameOk(name));
-    } else {
-        msg.reply(serifs.core.san).then(reply => {
-            this.subscribeReply(msg.userId, reply.id, {
-                name: name
-            });
-        });
-    }
-
-    return true;
-}
-
-	@autobind
-=======
 	@bindThis
->>>>>>> 54f10b33216ad516507c4d6eac45f435866a06ad
 	private modules(msg: Message): boolean  {
 		if (!msg.text) return false;
 		if (!msg.or(['modules'])) return false;
@@ -158,4 +134,5 @@ export default class extends Module {
 			});
 		}
 	}
+}
 }
