@@ -26,7 +26,7 @@ export default class extends Module {
 			this.transferEnd(msg) ||
 			this.setName(msg) ||
 			this.modules(msg) ||
-			this.version(msg) ||
+			this.version(msg)
 		);
 	}
 
@@ -130,4 +130,4 @@ private modules(msg: Message): boolean {
 			});
 		}
 	};
-
+}
