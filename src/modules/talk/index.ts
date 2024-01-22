@@ -1,21 +1,21 @@
-import autobind from 'autobind-decorator';
-import { HandlerResult } from '@/ai';
-import Module from '@/module';
-import Message from '@/message';
-import serifs, { getSerif } from '@/serifs';
-import getDate from '@/utils/get-date';
+import { bindThis } from '@/decorators.js';
+import { HandlerResult } from '@/ai.js';
+import Module from '@/module.js';
+import Message from '@/message.js';
+import serifs, { getSerif } from '@/serifs.js';
+import getDate from '@/utils/get-date.js';
 
 export default class extends Module {
 	public readonly name = 'talk';
 
-	@autobind
+	@bindThis
 	public install() {
 		return {
 			mentionHook: this.mentionHook,
 		};
 	}
 
-	@autobind
+	@bindThis
 	private async mentionHook(msg: Message) {
 		if (!msg.text) return false;
 
@@ -37,7 +37,7 @@ export default class extends Module {
 		);
 	}
 
-	@autobind
+	@bindThis
 	private greet(msg: Message): boolean {
 		if (msg.text == null) return false;
 
@@ -106,7 +106,7 @@ export default class extends Module {
 		return false;
 	}
 
-	@autobind
+	@bindThis
 	private erait(msg: Message): boolean {
 		const match = msg.extractedText.match(/(.+?)た(から|ので)(褒|ほ)めて/);
 		if (match) {
@@ -133,7 +133,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private omedeto(msg: Message): boolean {
 		if (!msg.includes(['おめでと'])) return false;
 
@@ -142,7 +142,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private nadenade(msg: Message): boolean {
 		if (!msg.includes(['なでなで'])) return false;
 
@@ -174,6 +174,7 @@ export default class extends Module {
 		return true;
 	}
 
+<<<<<<< HEAD
 	@autobind
 	private hizamakura(msg: Message): boolean {
 		if (!msg.includes(['ひざまくら', '膝枕'])) return false;
@@ -190,6 +191,9 @@ export default class extends Module {
 	}
 
 	@autobind
+=======
+	@bindThis
+>>>>>>> 54f10b33216ad516507c4d6eac45f435866a06ad
 	private kawaii(msg: Message): boolean {
 		if (!msg.includes(['かわいい', '可愛い'])) return false;
 
@@ -201,7 +205,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private suki(msg: Message): boolean {
 		if (!msg.or(['好き', 'すき'])) return false;
 
@@ -213,7 +217,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private hug(msg: Message): boolean {
 		if (!msg.or(['ぎゅ', 'むぎゅ', /^はぐ(し(て|よ|よう)?)?$/])) return false;
 
@@ -244,7 +248,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private humu(msg: Message): boolean {
 		if (!msg.includes(['踏んで'])) return false;
 
@@ -256,7 +260,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private batou(msg: Message): boolean {
 		if (!msg.includes(['罵倒して', '罵って'])) return false;
 
@@ -268,7 +272,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private itai(msg: Message): boolean {
 		if (!msg.or(['痛い', 'いたい']) && !msg.extractedText.endsWith('痛い')) return false;
 
@@ -277,7 +281,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private ote(msg: Message): boolean {
 		if (!msg.or(['お手'])) return false;
 
@@ -289,7 +293,7 @@ export default class extends Module {
 		return true;
 	}
 
-	@autobind
+	@bindThis
 	private ponkotu(msg: Message): boolean | HandlerResult {
 		if (!msg.includes(['ぽんこつ'])) return false;
 
@@ -300,7 +304,7 @@ export default class extends Module {
 		};
 	}
 
-	@autobind
+	@bindThis
 	private rmrf(msg: Message): boolean | HandlerResult {
 		if (!msg.includes(['rm -rf'])) return false;
 
@@ -311,7 +315,7 @@ export default class extends Module {
 		};
 	}
 
-	@autobind
+	@bindThis
 	private shutdown(msg: Message): boolean | HandlerResult {
 		if (!msg.includes(['shutdown'])) return false;
 
