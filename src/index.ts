@@ -57,8 +57,9 @@ promiseRetry(retry => {
 	}).json().catch(retry);
 }, {
 	retries: 3
-}).then((account: User)  => {
-	const acct = `@${account.username}`;
+}).then(account  => {
+	const ai = new 藍(account, []);
+	const acct = `@${ai.account.username}`;
 	log(chalk.green(`Account fetched successfully: ${chalk.underline(acct)}`));
 
 	log('Starting AiOS...');
