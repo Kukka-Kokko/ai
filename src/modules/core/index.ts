@@ -26,7 +26,7 @@ export default class extends Module {
 			this.transferEnd(msg) ||
 			this.setName(msg) ||
 			this.modules(msg) ||
-			this.version(msg)
+			this.version(msg) ||
 		);
 	}
 
@@ -80,29 +80,24 @@ export default class extends Module {
 		msg.reply(serifs.core.invalidName);
 		return true;
 	}
+}
 
-	@bindThis
-	private modules(msg: Message): boolean  {
-		if (!msg.text) return false;
-		if (!msg.or(['modules'])) return false;
+@bindThis
+private modules(msg: Message): boolean {
+	if (!msg.text) return false;
+	if (!msg.or(['modules'])) return false;
 
 		let text = '```\n';
 
-		for (const m of this.ai.modules) {
-			text += `${m.name}\n`;
-		}
-
 		text += '```';
-
-		msg.reply(text, {
-			immediate: true
-		});
+		
+		msg.reply(text, {immediate: true});
 
 		return true;
 	}
 
 	@bindThis
-	private version(msg: Message): boolean  {
+	private version(msg: Message): boolean {
 		if (!msg.text) return false;
 		if (!msg.or(['v', 'version', 'バージョン'])) return false;
 
@@ -115,7 +110,8 @@ export default class extends Module {
 
 	@bindThis
 	private async contextHook(key: any, msg: Message, data: any) {
-		if (msg.text == null) return;
+		// Your code here
+	
 
 		const done = () => {
 			msg.reply(serifs.core.setNameOk(msg.friend.name));
@@ -133,6 +129,5 @@ export default class extends Module {
 				this.subscribeReply(msg.userId, reply.id, data);
 			});
 		}
-	}
-}
-}
+	};
+
