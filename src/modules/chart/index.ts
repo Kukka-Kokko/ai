@@ -74,9 +74,9 @@ export default class extends Module {
 			chart = {
 				title: `@${params.user.username}さんのフォロワー数`,
 				datasets: [{
-					data: data.local.followers.total
+					data: (data as any).local.followers.total
 				}, {
-					data: data.remote.followers.total
+					data: (data as any).remote.followers.total
 				}]
 			};
 		} else if (type === 'notes') {
