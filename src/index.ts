@@ -45,6 +45,10 @@ function log(msg: string): void {
 
 log(chalk.bold(`Ai v${pkg._v}`));
 
+function isUser(obj: unknown): obj is User {
+	return typeof obj === 'object' && obj!== null && 'id' in obj && 'username' in obj;
+}
+
 promiseRetry(retry => {
 	log(`Account fetching... ${chalk.gray(config.host)}`);
 
