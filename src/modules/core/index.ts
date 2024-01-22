@@ -77,6 +77,8 @@ export default class extends Module {
 		msg.reply(serifs.core.invalidName);
 		return true;
 	}
+
+	return true;
 }
 
 @bindThis
