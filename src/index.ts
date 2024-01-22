@@ -56,7 +56,7 @@ promiseRetry(retry => {
 	}).json().catch(retry);
 }, {
 	retries: 3
-}).then(account => {
+}).then((account: { username: any; id?: string; name?: string; host?: string | null | undefined; isFollowing?: boolean | undefined; isBot?: boolean; }) => {
 	const acct = `@${account.username}`;
 	log(chalk.green(`Account fetched successfully: ${chalk.underline(acct)}`));
 
