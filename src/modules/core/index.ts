@@ -68,9 +68,6 @@ export default class extends Module {
 
 		const name = msg.text.match(/^(.+?)って呼んで/g)![1];
 
-    // メンション部分を除外
-	const name = nameMatch.replace(/@[a-zA-Z0-9_]+/g, '');
-
     if (name.length > 50) {
         msg.reply(serifs.core.tooLong);
         return true;
