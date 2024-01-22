@@ -362,7 +362,7 @@ export default class 藍 {
 	 */
 	@bindThis
 	public async post(param: any) {
-		const res = await this.api('notes/create', param);
+		const res: any = await this.api('notes/create', param);
 		return res.createdNote;
 	}
 
