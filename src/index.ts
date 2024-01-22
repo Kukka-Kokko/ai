@@ -14,6 +14,7 @@ const pkg = require('../package.json');
 import CoreModule from './modules/core';
 import TalkModule from './modules/talk';
 import BirthdayModule from './modules/birthday';
+import ReversiModule from './modules/reversi';
 import PingModule from './modules/ping';
 import EmojiModule from './modules/emoji';
 import EmojiReactModule from './modules/emoji-react';
@@ -70,6 +71,7 @@ promiseRetry(retry => {
 		new FortuneModule(),
 		new GuessingGameModule(),
 		new KazutoriModule(),
+		new ReversiModule(),
 		new TimerModule(),
 		new DiceModule(),
 		new TalkModule(),
