@@ -1,11 +1,11 @@
-import autobind from 'autobind-decorator';
-import Module from '@/module';
-import serifs from '@/serifs';
+import { bindThis } from '@/decorators.js';
+import Module from '@/module.js';
+import serifs from '@/serifs.js';
 
 export default class extends Module {
 	public readonly name = 'akeome';
 
-	@autobind
+	@bindThis
 	public install() {
 		this.crawleNewYear();
 		setInterval(this.crawleNewYear, 1000 * 60 * 1);
@@ -15,7 +15,7 @@ export default class extends Module {
 
 	/**Happy New Year!**/
 
-	@autobind
+	@bindThis
 	private crawleNewYear() {
 		const now = new Date();
 
